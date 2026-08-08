@@ -6,6 +6,10 @@
 
 <title>எப்போதும் வென்றான் | டிஜிட்டல் கிராமம்</title>
 
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
 <style>
 
 *{
@@ -597,8 +601,6 @@ footer{
 
 <body>
 
-<!-- HEADER -->
-
 <header id="home">
 
     <h1>எப்போதும் வென்றான்</h1>
@@ -609,30 +611,18 @@ footer{
 
 </header>
 
-
-<!-- NAV -->
-
 <nav>
 
     <a href="#home">முகப்பு</a>
-
     <a href="#notice">அறிவிப்பு</a>
-
     <a href="#work100">100 நாள் வேலை</a>
-
     <a href="#services">மக்கள் சேவைகள்</a>
-
     <a href="#complaints">குறைகள்</a>
-
     <a href="#contact">தொடர்பு</a>
 
 </nav>
 
-
 <div class="container">
-
-
-<!-- ================= அறிவிப்பு ================= -->
 
 <section class="section" id="notice">
 
@@ -666,9 +656,6 @@ footer{
 
         </div>
 
-
-        <!-- ரேஷன் -->
-
         <div class="ration-quick-card">
 
             <div class="ration-quick-title">
@@ -690,9 +677,6 @@ footer{
             </div>
 
         </div>
-
-
-        <!-- ADMIN LOGIN -->
 
         <div class="admin-login">
 
@@ -725,9 +709,6 @@ footer{
                 class="login-message">
             </div>
 
-
-            <!-- ADMIN PANEL -->
-
             <div id="adminPanel">
 
                 <div class="admin-panel">
@@ -735,7 +716,6 @@ footer{
                     <div class="admin-title">
                         ⚙️ Admin Control Panel
                     </div>
-
 
                     <div class="admin-buttons">
 
@@ -748,7 +728,6 @@ footer{
 
                         </button>
 
-
                         <button
                             class="admin-btn closed-btn"
                             onclick="setRationStatus('closed')">
@@ -760,7 +739,6 @@ footer{
 
                     </div>
 
-
                     <button
                         class="admin-btn pending-btn"
                         style="width:100%;margin-top:10px"
@@ -770,14 +748,10 @@ footer{
 
                     </button>
 
-
                     <div
                         id="rationUpdatedTime"
                         class="admin-updated">
                     </div>
-
-
-                    <!-- NOTICE UPLOAD -->
 
                     <div class="upload-group">
 
@@ -801,9 +775,6 @@ footer{
 
                     </div>
 
-
-                    <!-- 100 DAYS UPLOAD -->
-
                     <div class="upload-group">
 
                         <h4>
@@ -826,7 +797,6 @@ footer{
 
                     </div>
 
-
                     <button
                         class="admin-btn"
                         style="width:100%;margin-top:14px;background:#334155;color:white"
@@ -845,9 +815,6 @@ footer{
     </div>
 
 </section>
-
-
-<!-- ================= 100 நாள் வேலை ================= -->
 
 <section
     class="section"
@@ -872,7 +839,6 @@ footer{
             id="workDate"
             style="text-align:center;color:#64748b;font-size:13px;margin:8px 0 12px">
         </div>
-
 
         <div
             class="poster"
@@ -899,7 +865,6 @@ footer{
 
         </div>
 
-
         <details style="margin-top:15px">
 
             <summary
@@ -923,9 +888,6 @@ footer{
 
 </section>
 
-
-<!-- ================= மக்கள் சேவைகள் ================= -->
-
 <section
     class="section"
     id="services">
@@ -938,172 +900,61 @@ footer{
         சேவையை தேர்வு செய்து முழு விவரங்களை பார்க்கவும்
     </p>
 
-
     <div class="services-grid">
 
-
-        <div
-            class="service-card"
-            onclick="openService('ration')">
-
-            <div class="service-icon">
-                🏪
-            </div>
-
-            <h3>
-                ரேஷன் கடை
-            </h3>
-
-            <p>
-                இன்றைய நிலவரம்
-            </p>
-
+        <div class="service-card" onclick="openService('ration')">
+            <div class="service-icon">🏪</div>
+            <h3>ரேஷன் கடை</h3>
+            <p>இன்றைய நிலவரம்</p>
         </div>
 
-
-        <div
-            class="service-card"
-            onclick="openService('rationcard')">
-
-            <div class="service-icon">
-                🪪
-            </div>
-
-            <h3>
-                ரேஷன் கார்டு
-            </h3>
-
-            <p>
-                அனைத்து சேவைகள்
-            </p>
-
+        <div class="service-card" onclick="openService('rationcard')">
+            <div class="service-icon">🪪</div>
+            <h3>ரேஷன் கார்டு</h3>
+            <p>அனைத்து சேவைகள்</p>
         </div>
 
-
-        <div
-            class="service-card"
-            onclick="openService('voter')">
-
-            <div class="service-icon">
-                🗳️
-            </div>
-
-            <h3>
-                வாக்காளர் அட்டை
-            </h3>
-
-            <p>
-                அனைத்து சேவைகள்
-            </p>
-
+        <div class="service-card" onclick="openService('voter')">
+            <div class="service-icon">🗳️</div>
+            <h3>வாக்காளர் அட்டை</h3>
+            <p>அனைத்து சேவைகள்</p>
         </div>
 
-
-        <div
-            class="service-card"
-            onclick="openService('oldage')">
-
-            <div class="service-icon">
-                👴
-            </div>
-
-            <h3>
-                முதியோர் உதவி
-            </h3>
-
-            <p>
-                உதவித்தொகை
-            </p>
-
+        <div class="service-card" onclick="openService('oldage')">
+            <div class="service-icon">👴</div>
+            <h3>முதியோர் உதவி</h3>
+            <p>உதவித்தொகை</p>
         </div>
 
-
-        <div
-            class="service-card"
-            onclick="openService('disability')">
-
-            <div class="service-icon">
-                ♿
-            </div>
-
-            <h3>
-                மாற்றுத்திறனாளிகள்
-            </h3>
-
-            <p>
-                நலத்திட்டங்கள்
-            </p>
-
+        <div class="service-card" onclick="openService('disability')">
+            <div class="service-icon">♿</div>
+            <h3>மாற்றுத்திறனாளிகள்</h3>
+            <p>நலத்திட்டங்கள்</p>
         </div>
 
-
-        <div
-            class="service-card"
-            onclick="openService('agriculture')">
-
-            <div class="service-icon">
-                🌾
-            </div>
-
-            <h3>
-                விவசாயம்
-            </h3>
-
-            <p>
-                விவசாய உதவி
-            </p>
-
+        <div class="service-card" onclick="openService('agriculture')">
+            <div class="service-icon">🌾</div>
+            <h3>விவசாயம்</h3>
+            <p>விவசாய உதவி</p>
         </div>
 
-
-        <div
-            class="service-card"
-            onclick="openService('livestock')">
-
-            <div class="service-icon">
-                🐐
-            </div>
-
-            <h3>
-                கால்நடை
-            </h3>
-
-            <p>
-                திட்டங்கள் & உதவி
-            </p>
-
+        <div class="service-card" onclick="openService('livestock')">
+            <div class="service-icon">🐐</div>
+            <h3>கால்நடை</h3>
+            <p>திட்டங்கள் & உதவி</p>
         </div>
 
-
-        <div
-            class="service-card"
-            onclick="openService('petition')">
-
-            <div class="service-icon">
-                📝
-            </div>
-
-            <h3>
-                அரசு மனு
-            </h3>
-
-            <p>
-                மனு உதவி
-            </p>
-
+        <div class="service-card" onclick="openService('petition')">
+            <div class="service-icon">📝</div>
+            <h3>அரசு மனு</h3>
+            <p>மனு உதவி</p>
         </div>
-
 
     </div>
 
 </section>
 
-
-<!-- ================= DETAIL ================= -->
-
-<div
-    id="detailBox"
-    class="card">
+<div id="detailBox" class="card">
 
     <div class="detail-title">
 
@@ -1119,28 +970,17 @@ footer{
 
     </div>
 
-
     <div id="detailContent"></div>
 
-
-    <div
-        id="subServices"
-        class="sub-services">
-    </div>
-
-
-    <!-- REQUEST -->
+    <div id="subServices" class="sub-services"></div>
 
     <div id="requestBox">
 
         <h3 id="requestTitle"></h3>
 
-
         <div class="form-group">
 
-            <label>
-                உங்கள் பெயர் *
-            </label>
+            <label>உங்கள் பெயர் *</label>
 
             <input
                 id="userName"
@@ -1149,12 +989,9 @@ footer{
 
         </div>
 
-
         <div class="form-group">
 
-            <label>
-                மொபைல் எண் *
-            </label>
+            <label>மொபைல் எண் *</label>
 
             <input
                 id="userPhone"
@@ -1164,12 +1001,9 @@ footer{
 
         </div>
 
-
         <div class="form-group">
 
-            <label>
-                📎 தேவையான ஆவணம்
-            </label>
+            <label>📎 தேவையான ஆவணம்</label>
 
             <input
                 id="userDocument"
@@ -1177,7 +1011,6 @@ footer{
                 accept="image/*,.pdf">
 
         </div>
-
 
         <button
             class="submit-btn"
@@ -1187,10 +1020,7 @@ footer{
 
         </button>
 
-
-        <div
-            id="successMessage"
-            class="success">
+        <div id="successMessage" class="success">
 
             ✅ உங்கள் கோரிக்கை பதிவு செய்யப்பட்டது.
 
@@ -1204,9 +1034,6 @@ footer{
 
 </div>
 
-
-<!-- ================= குறைகள் ================= -->
-
 <section
     class="section"
     id="complaints">
@@ -1219,83 +1046,57 @@ footer{
         உங்கள் பகுதியில் உள்ள பிரச்சினையை பதிவு செய்யுங்கள்
     </p>
 
-
     <div class="card">
 
-
         <div class="complaint-grid">
-
 
             <div
                 class="complaint-type"
                 onclick="selectComplaint(this,'குடிநீர்')">
-
                 💧<br>
                 குடிநீர்
-
             </div>
-
 
             <div
                 class="complaint-type"
                 onclick="selectComplaint(this,'மின்சாரம்')">
-
                 ⚡<br>
                 மின்சாரம்
-
             </div>
-
 
             <div
                 class="complaint-type"
                 onclick="selectComplaint(this,'சாலை')">
-
                 🛣️<br>
                 சாலை
-
             </div>
-
 
             <div
                 class="complaint-type"
                 onclick="selectComplaint(this,'தெருவிளக்கு')">
-
                 💡<br>
                 தெருவிளக்கு
-
             </div>
-
 
             <div
                 class="complaint-type"
                 onclick="selectComplaint(this,'சுகாதாரம்')">
-
                 🚮<br>
                 சுகாதாரம்
-
             </div>
-
 
             <div
                 class="complaint-type"
                 onclick="selectComplaint(this,'ஊராட்சி')">
-
                 🏘️<br>
                 ஊராட்சி
-
             </div>
-
 
         </div>
 
+        <div class="form-group" style="margin-top:15px">
 
-        <div
-            class="form-group"
-            style="margin-top:15px">
-
-            <label>
-                பெயர் *
-            </label>
+            <label>பெயர் *</label>
 
             <input
                 id="complaintName"
@@ -1304,12 +1105,9 @@ footer{
 
         </div>
 
-
         <div class="form-group">
 
-            <label>
-                மொபைல் எண் *
-            </label>
+            <label>மொபைல் எண் *</label>
 
             <input
                 id="complaintPhone"
@@ -1319,27 +1117,20 @@ footer{
 
         </div>
 
-
         <div class="form-group">
 
-            <label>
-                பிரச்சினை விவரம் *
-            </label>
+            <label>பிரச்சினை விவரம் *</label>
 
             <textarea
                 id="complaintDetails"
                 rows="4"
-                placeholder="பிரச்சினையை எழுதுங்கள்">
-            </textarea>
+                placeholder="பிரச்சினையை எழுதுங்கள்"></textarea>
 
         </div>
 
-
         <div class="form-group">
 
-            <label>
-                📷 பிரச்சினையின் புகைப்படம்
-            </label>
+            <label>📷 பிரச்சினையின் புகைப்படம்</label>
 
             <input
                 id="complaintPhoto"
@@ -1347,7 +1138,6 @@ footer{
                 accept="image/*">
 
         </div>
-
 
         <button
             class="submit-btn"
@@ -1357,10 +1147,7 @@ footer{
 
         </button>
 
-
-        <div
-            id="complaintSuccess"
-            class="success">
+        <div id="complaintSuccess" class="success">
 
             ✅ உங்கள் குறை பதிவு செய்யப்பட்டது.
 
@@ -1370,13 +1157,9 @@ footer{
 
         </div>
 
-
     </div>
 
 </section>
-
-
-<!-- CONTACT -->
 
 <section id="contact">
 
@@ -1399,11 +1182,7 @@ footer{
 
 </section>
 
-
 </div>
-
-
-<!-- IMAGE VIEWER -->
 
 <div
     id="imageViewer"
@@ -1421,9 +1200,6 @@ footer{
 
 </div>
 
-
-<!-- FOOTER -->
-
 <footer>
 
     © 2026 எப்போதும் வென்றான்
@@ -1434,8 +1210,42 @@ footer{
 
 </footer>
 
-
 <script>
+
+/* =====================================================
+   FIREBASE CONFIG
+===================================================== */
+
+const firebaseConfig = {
+
+    apiKey:
+        "AIzaSyBtxWNAnHzrk01YPzVK_nRiHLNzm14PXZL4",
+
+    authDomain:
+        "eppodumvendran-6ec03.firebaseapp.com",
+
+    projectId:
+        "eppodumvendran-6ec03",
+
+    storageBucket:
+        "eppodumvendran-6ec03.firebasestorage.app",
+
+    messagingSenderId:
+        "513792288955",
+
+    appId:
+        "1:513792288955:web:e81dc1a0464a983b65a19e",
+
+    measurementId:
+        "G-70RXWHJJSN"
+
+};
+
+firebase.initializeApp(firebaseConfig);
+
+const db =
+    firebase.firestore();
+
 
 /* =====================================================
    ADMIN LOGIN
@@ -1458,7 +1268,6 @@ function adminLogin(){
         document
         .getElementById("loginMessage");
 
-
     if(
         username === "admin" &&
         password === "admin"
@@ -1469,15 +1278,13 @@ function adminLogin(){
             "yes"
         );
 
-
         document
         .getElementById("adminPanel")
-        .style.display = "block";
-
+        .style.display =
+            "block";
 
         message.style.color =
             "#16a34a";
-
 
         message.innerText =
             "✅ Login வெற்றிகரமாக முடிந்தது!";
@@ -1488,12 +1295,11 @@ function adminLogin(){
 
         document
         .getElementById("adminPanel")
-        .style.display = "none";
-
+        .style.display =
+            "none";
 
         message.style.color =
             "#dc2626";
-
 
         message.innerText =
             "❌ Login ID அல்லது Password தவறாக உள்ளது.";
@@ -1513,17 +1319,15 @@ function adminLogout(){
         "adminLoggedIn"
     );
 
-
     document
     .getElementById("adminPanel")
-    .style.display = "none";
-
+    .style.display =
+        "none";
 
     document
     .getElementById("loginMessage")
     .style.color =
         "#64748b";
-
 
     document
     .getElementById("loginMessage")
@@ -1541,7 +1345,6 @@ function getTodayDate(){
 
     const today =
         new Date();
-
 
     return (
 
@@ -1579,7 +1382,6 @@ function updateTodayDate(){
             "rationTodayDate"
         );
 
-
     if(el){
 
         el.innerText =
@@ -1588,12 +1390,10 @@ function updateTodayDate(){
 
     }
 
-
     const workDate =
         document.getElementById(
             "workDate"
         );
-
 
     if(workDate){
 
@@ -1608,13 +1408,20 @@ function updateTodayDate(){
 
 /* =====================================================
    RATION
+   FIREBASE REALTIME
 ===================================================== */
 
 let rationStatus =
-    localStorage.getItem(
-        "rationStatus"
-    ) || "pending";
+    "pending";
 
+
+let rationUpdatedTime =
+    "";
+
+
+/* -----------------------------------------------------
+   DISPLAY RATION STATUS
+----------------------------------------------------- */
 
 function displayRationStatus(){
 
@@ -1623,17 +1430,14 @@ function displayRationStatus(){
             "rationQuickStatus"
         );
 
-
     if(!el){
 
         return;
 
     }
 
-
     el.className =
         "ration-quick-status";
-
 
     if(
         rationStatus === "open"
@@ -1642,7 +1446,6 @@ function displayRationStatus(){
         el.classList.add(
             "open"
         );
-
 
         el.innerText =
             "🟢 இன்று ரேஷன் கடை திறந்திருக்கும்";
@@ -1657,7 +1460,6 @@ function displayRationStatus(){
             "closed"
         );
 
-
         el.innerText =
             "🔴 இன்று ரேஷன் கடை திறக்கவில்லை";
 
@@ -1669,38 +1471,93 @@ function displayRationStatus(){
             "pending"
         );
 
-
         el.innerText =
             "⚪ இன்று ரேஷன் கடை நிலவரம் புதுப்பிக்கப்படவில்லை";
 
     }
 
-
     const updated =
-        localStorage.getItem(
+        document.getElementById(
             "rationUpdatedTime"
         );
 
+    if(updated){
 
-    document
-    .getElementById(
-        "rationUpdatedTime"
-    )
-    .innerText =
+        updated.innerText =
+            rationUpdatedTime
 
-        updated
+            ?
 
-        ?
+            "கடைசி Update: " +
+            rationUpdatedTime
 
-        "கடைசி Update: " +
-        updated
+            :
 
-        :
+            "இன்னும் Update செய்யப்படவில்லை";
 
-        "இன்னும் Update செய்யப்படவில்லை";
+    }
 
 }
 
+
+/* -----------------------------------------------------
+   FIREBASE REALTIME LISTENER
+----------------------------------------------------- */
+
+function listenRationStatus(){
+
+    db.collection("rationshop")
+      .doc("current")
+      .onSnapshot(
+
+        function(doc){
+
+            if(doc.exists){
+
+                const data =
+                    doc.data();
+
+                rationStatus =
+                    data.status || "pending";
+
+                rationUpdatedTime =
+                    data.updatedTime || "";
+
+            }
+
+            else{
+
+                rationStatus =
+                    "pending";
+
+                rationUpdatedTime =
+                    "";
+
+            }
+
+            displayRationStatus();
+
+            updateRationDetail();
+
+        },
+
+        function(error){
+
+            console.error(
+                "Firebase error:",
+                error
+            );
+
+        }
+
+      );
+
+}
+
+
+/* -----------------------------------------------------
+   SET RATION STATUS
+----------------------------------------------------- */
 
 function setRationStatus(status){
 
@@ -1718,28 +1575,61 @@ function setRationStatus(status){
 
     }
 
-
-    rationStatus =
-        status;
-
-
-    localStorage.setItem(
-        "rationStatus",
-        status
-    );
-
-
-    localStorage.setItem(
-        "rationUpdatedTime",
+    const updatedTime =
         new Date().toLocaleString(
             "ta-IN"
-        )
-    );
+        );
 
+    db.collection("rationshop")
+      .doc("current")
+      .set({
 
-    displayRationStatus();
+          status:
+              status,
 
-    updateRationDetail();
+          updatedDate:
+              getTodayDate(),
+
+          updatedTime:
+              updatedTime
+
+      })
+
+      .then(
+
+        function(){
+
+            rationStatus =
+                status;
+
+            rationUpdatedTime =
+                updatedTime;
+
+            displayRationStatus();
+
+            updateRationDetail();
+
+        }
+
+      )
+
+      .catch(
+
+        function(error){
+
+            console.error(
+                "Firebase update error:",
+                error
+            );
+
+            alert(
+                "❌ Firebase Update செய்ய முடியவில்லை.\n\n" +
+                error.message
+            );
+
+        }
+
+      );
 
 }
 
@@ -1759,10 +1649,8 @@ function readAndSaveImage(
             inputId
         );
 
-
     const file =
         input.files[0];
-
 
     if(!file){
 
@@ -1774,10 +1662,8 @@ function readAndSaveImage(
 
     }
 
-
     const reader =
         new FileReader();
-
 
     reader.onload =
         function(e){
@@ -1787,19 +1673,16 @@ function readAndSaveImage(
                 e.target.result
             );
 
-
             showSavedImage(
                 targetId,
                 e.target.result
             );
-
 
             alert(
                 "✅ படம் சேமிக்கப்பட்டது."
             );
 
         };
-
 
     reader.readAsDataURL(
         file
@@ -1823,7 +1706,6 @@ function saveNoticeImage(){
         return;
 
     }
-
 
     readAndSaveImage(
         "noticeUpload",
@@ -1850,7 +1732,6 @@ function saveWorkImage(){
 
     }
 
-
     readAndSaveImage(
         "workUpload",
         "villageWorkImage",
@@ -1870,23 +1751,19 @@ function showSavedImage(
             targetId
         );
 
-
-    box.innerHTML = "";
-
+    box.innerHTML =
+        "";
 
     const img =
         document.createElement(
             "img"
         );
 
-
     img.src =
         src;
 
-
     img.alt =
         "கிராம அறிவிப்பு";
-
 
     img.onclick =
         function(){
@@ -1894,7 +1771,6 @@ function showSavedImage(
             openImage(src);
 
         };
-
 
     box.appendChild(
         img
@@ -1910,12 +1786,10 @@ function loadSavedImages(){
             "villageNoticeImage"
         );
 
-
     const work =
         localStorage.getItem(
             "villageWorkImage"
         );
-
 
     if(notice){
 
@@ -1925,7 +1799,6 @@ function loadSavedImages(){
         );
 
     }
-
 
     if(work){
 
@@ -1944,7 +1817,6 @@ function loadSavedImages(){
 ===================================================== */
 
 const services = {
-
 
 ration:{
 
@@ -1975,7 +1847,6 @@ ration:{
 
             </div>
 
-
             <div
                 id="rationDetailStatus"
                 class="ration-status pending">
@@ -1999,7 +1870,6 @@ ration:{
     ]
 
 },
-
 
 rationcard:{
 
@@ -2045,7 +1915,6 @@ rationcard:{
 
 },
 
-
 voter:{
 
     name:
@@ -2067,7 +1936,6 @@ voter:{
 
         </div>
 
-
         <div class="info-box">
 
             <h3>
@@ -2076,17 +1944,11 @@ voter:{
 
             <ul class="info-list">
 
-                <li>
-                    அடையாள ஆவணம்
-                </li>
+                <li>அடையாள ஆவணம்</li>
 
-                <li>
-                    முகவரி ஆதாரம்
-                </li>
+                <li>முகவரி ஆதாரம்</li>
 
-                <li>
-                    தேவையான பிற ஆவணங்கள்
-                </li>
+                <li>தேவையான பிற ஆவணங்கள்</li>
 
             </ul>
 
@@ -2112,7 +1974,6 @@ voter:{
 
 },
 
-
 oldage:{
 
     name:
@@ -2133,7 +1994,6 @@ oldage:{
 
         </div>
 
-
         <div class="info-box">
 
             <h3>
@@ -2142,21 +2002,13 @@ oldage:{
 
             <ul class="info-list">
 
-                <li>
-                    அடையாள ஆவணம்
-                </li>
+                <li>அடையாள ஆவணம்</li>
 
-                <li>
-                    வங்கி கணக்கு விவரம்
-                </li>
+                <li>வங்கி கணக்கு விவரம்</li>
 
-                <li>
-                    முகவரி ஆவணம்
-                </li>
+                <li>முகவரி ஆவணம்</li>
 
-                <li>
-                    தேவையான பிற ஆவணங்கள்
-                </li>
+                <li>தேவையான பிற ஆவணங்கள்</li>
 
             </ul>
 
@@ -2177,7 +2029,6 @@ oldage:{
     ]
 
 },
-
 
 disability:{
 
@@ -2217,7 +2068,6 @@ disability:{
     ]
 
 },
-
 
 agriculture:{
 
@@ -2260,7 +2110,6 @@ agriculture:{
 
 },
 
-
 livestock:{
 
     name:
@@ -2301,7 +2150,6 @@ livestock:{
     ]
 
 },
-
 
 petition:{
 
@@ -2356,40 +2204,33 @@ function openService(type){
     const service =
         services[type];
 
-
     document
     .getElementById("detailBox")
     .style.display =
         "block";
-
 
     document
     .getElementById("detailName")
     .innerText =
         service.name;
 
-
     document
     .getElementById("detailContent")
     .innerHTML =
         service.content;
-
 
     document
     .getElementById("requestBox")
     .style.display =
         "none";
 
-
     const container =
         document.getElementById(
             "subServices"
         );
 
-
     container.innerHTML =
         "";
-
 
     service.items.forEach(
         function(item){
@@ -2399,17 +2240,14 @@ function openService(type){
                     "div"
                 );
 
-
             div.className =
                 "sub-service";
-
 
             div.innerHTML =
                 "<span>" +
                 item +
                 "</span>" +
                 "<span class='arrow'>›</span>";
-
 
             div.onclick =
                 function(){
@@ -2421,14 +2259,12 @@ function openService(type){
 
                 };
 
-
             container.appendChild(
                 div
             );
 
         }
     );
-
 
     if(
         type === "ration"
@@ -2437,7 +2273,6 @@ function openService(type){
         updateRationDetail();
 
     }
-
 
     document
     .getElementById("detailBox")
@@ -2459,7 +2294,6 @@ function updateRationDetail(){
             "rationDetailDate"
         );
 
-
     if(date){
 
         date.innerText =
@@ -2467,12 +2301,10 @@ function updateRationDetail(){
 
     }
 
-
     const el =
         document.getElementById(
             "rationDetailStatus"
         );
-
 
     if(!el){
 
@@ -2480,10 +2312,8 @@ function updateRationDetail(){
 
     }
 
-
     el.className =
         "ration-status";
-
 
     if(
         rationStatus === "open"
@@ -2492,7 +2322,6 @@ function updateRationDetail(){
         el.classList.add(
             "open"
         );
-
 
         el.innerText =
             "🟢 இன்று ரேஷன் கடை திறந்திருக்கும்";
@@ -2507,7 +2336,6 @@ function updateRationDetail(){
             "closed"
         );
 
-
         el.innerText =
             "🔴 இன்று ரேஷன் கடை திறக்கவில்லை";
 
@@ -2518,7 +2346,6 @@ function updateRationDetail(){
         el.classList.add(
             "pending"
         );
-
 
         el.innerText =
             "⚪ இன்று ரேஷன் கடை நிலவரம் புதுப்பிக்கப்படவில்லை";
@@ -2544,7 +2371,6 @@ function openRequest(
     .style.display =
         "block";
 
-
     document
     .getElementById(
         "requestTitle"
@@ -2554,14 +2380,12 @@ function openRequest(
         " - " +
         item;
 
-
     document
     .getElementById(
         "successMessage"
     )
     .style.display =
         "none";
-
 
     document
     .getElementById(
@@ -2588,7 +2412,6 @@ function submitRequest(){
         .value
         .trim();
 
-
     const phone =
         document
         .getElementById(
@@ -2597,10 +2420,7 @@ function submitRequest(){
         .value
         .trim();
 
-
-    if(
-        !name
-    ){
+    if(!name){
 
         alert(
             "உங்கள் பெயரை உள்ளிடவும்."
@@ -2609,7 +2429,6 @@ function submitRequest(){
         return;
 
     }
-
 
     if(
         !/^[0-9]{10}$/.test(
@@ -2624,7 +2443,6 @@ function submitRequest(){
         return;
 
     }
-
 
     const request = {
 
@@ -2647,7 +2465,6 @@ function submitRequest(){
 
     };
 
-
     const requests =
         JSON.parse(
             localStorage.getItem(
@@ -2655,11 +2472,9 @@ function submitRequest(){
             ) || "[]"
         );
 
-
     requests.push(
         request
     );
-
 
     localStorage.setItem(
         "villageRequests",
@@ -2668,7 +2483,6 @@ function submitRequest(){
         )
     );
 
-
     document
     .getElementById(
         "successMessage"
@@ -2676,14 +2490,12 @@ function submitRequest(){
     .style.display =
         "block";
 
-
     document
     .getElementById(
         "userName"
     )
     .value =
         "";
-
 
     document
     .getElementById(
@@ -2707,7 +2519,6 @@ function closeDetail(){
     )
     .style.display =
         "none";
-
 
     document
     .getElementById(
@@ -2747,11 +2558,9 @@ function selectComplaint(
         }
     );
 
-
     element.classList.add(
         "active"
     );
-
 
     selectedComplaint =
         type;
@@ -2769,7 +2578,6 @@ function submitComplaint(){
         .value
         .trim();
 
-
     const phone =
         document
         .getElementById(
@@ -2777,7 +2585,6 @@ function submitComplaint(){
         )
         .value
         .trim();
-
 
     const details =
         document
@@ -2787,10 +2594,7 @@ function submitComplaint(){
         .value
         .trim();
 
-
-    if(
-        !selectedComplaint
-    ){
+    if(!selectedComplaint){
 
         alert(
             "குறையின் வகையை தேர்வு செய்யுங்கள்."
@@ -2800,10 +2604,7 @@ function submitComplaint(){
 
     }
 
-
-    if(
-        !name
-    ){
+    if(!name){
 
         alert(
             "உங்கள் பெயரை உள்ளிடவும்."
@@ -2812,7 +2613,6 @@ function submitComplaint(){
         return;
 
     }
-
 
     if(
         !/^[0-9]{10}$/.test(
@@ -2828,10 +2628,7 @@ function submitComplaint(){
 
     }
 
-
-    if(
-        !details
-    ){
+    if(!details){
 
         alert(
             "பிரச்சினை விவரத்தை எழுதுங்கள்."
@@ -2840,7 +2637,6 @@ function submitComplaint(){
         return;
 
     }
-
 
     const complaint = {
 
@@ -2860,7 +2656,6 @@ function submitComplaint(){
 
     };
 
-
     const complaints =
         JSON.parse(
             localStorage.getItem(
@@ -2868,11 +2663,9 @@ function submitComplaint(){
             ) || "[]"
         );
 
-
     complaints.push(
         complaint
     );
-
 
     localStorage.setItem(
         "villageComplaints",
@@ -2881,14 +2674,12 @@ function submitComplaint(){
         )
     );
 
-
     document
     .getElementById(
         "complaintSuccess"
     )
     .style.display =
         "block";
-
 
     document
     .getElementById(
@@ -2897,14 +2688,12 @@ function submitComplaint(){
     .value =
         "";
 
-
     document
     .getElementById(
         "complaintPhone"
     )
     .value =
         "";
-
 
     document
     .getElementById(
@@ -2929,7 +2718,6 @@ function openImage(src){
     .src =
         src;
 
-
     document
     .getElementById(
         "imageViewer"
@@ -2948,7 +2736,6 @@ function closeImage(){
     )
     .style.display =
         "none";
-
 
     document
     .getElementById(
@@ -2970,10 +2757,17 @@ document.addEventListener(
 
         updateTodayDate();
 
-        displayRationStatus();
-
         loadSavedImages();
 
+        /*
+         * Firebase-ல் இருந்து ரேஷன் நிலவரத்தை
+         * தொடர்ந்து கேட்டு பெறும்.
+         *
+         * Admin எந்த device-ல் மாற்றினாலும்
+         * அனைத்து devices-லும் update ஆகும்.
+         */
+
+        listenRationStatus();
 
         if(
             sessionStorage.getItem(
@@ -2988,14 +2782,12 @@ document.addEventListener(
             .style.display =
                 "block";
 
-
             document
             .getElementById(
                 "loginMessage"
             )
             .style.color =
                 "#16a34a";
-
 
             document
             .getElementById(
