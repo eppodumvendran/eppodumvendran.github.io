@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>எப்போதும் வென்றான் | எங்கள் கிராமம்</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, "Noto Sans Tamil", sans-serif;
+            background: #f5f7fa;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f766e, #0891b2);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        nav {
+            background: white;
+            padding: 14px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0f766e;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 45px 20px;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #0f766e;
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
+
+        .welcome {
+            background: white;
+            margin-top: 25px;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            color: #0891b2;
+            margin-bottom: 10px;
+        }
+
+        .contact {
+            background: #e6fffb;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        footer {
+            background: #134e4a;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 7px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>எப்போதும் வென்றான்</h1>
+        <p>எங்கள் கிராமம் • எங்கள் பெருமை</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">முகப்பு</a>
+        <a href="#about">கிராமம்</a>
+        <a href="#facilities">வசதிகள்</a>
+        <a href="#contact">தொடர்பு</a>
+    </nav>
+
+    <!-- Home -->
+    <section id="home">
+        <div class="welcome">
+            <h2>எப்போதும் வென்றான் கிராமத்திற்கு வரவேற்கிறோம்!</h2>
+
+            <p>
+                தூத்துக்குடி மாவட்டம், ஓட்டப்பிடாரம் வட்டாரத்தில் அமைந்துள்ள
+                எப்போதும் வென்றான் கிராமத்தின் தகவல்களை ஒரே இடத்தில்
+                அறிந்து கொள்ள உருவாக்கப்பட்ட இணையதளம்.
+            </p>
+
+            <p>
+                நமது கிராமத்தின் செய்திகள், முக்கிய இடங்கள்,
+                பொதுமக்கள் பயன்பாட்டு தகவல்கள் மற்றும்
+                வளர்ச்சி தொடர்பான தகவல்கள் இங்கு பகிரப்படும்.
+            </p>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <h2>எங்கள் கிராமம்</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>📍 இருப்பிடம்</h3>
+                <p>
+                    எப்போதும் வென்றான்<br>
+                    ஓட்டப்பிடாரம் வட்டாரம்<br>
+                    தூத்துக்குடி மாவட்டம்<br>
+                    தமிழ்நாடு
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🌾 விவசாயம்</h3>
+                <p>
+                    விவசாயம் மற்றும் கால்நடை வளர்ப்பு
+                    நமது கிராம மக்களின் முக்கிய வாழ்வாதாரங்களில் ஒன்றாகும்.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>👨‍👩‍👧‍👦 மக்கள்</h3>
+                <p>
+                    நமது கிராம மக்களின் வாழ்க்கை,
+                    தேவைகள் மற்றும் வளர்ச்சி தொடர்பான
+                    தகவல்கள் இங்கு இடம்பெறும்.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Facilities -->
+    <section id="facilities">
+        <h2>முக்கிய வசதிகள்</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>🏫 கல்வி</h3>
+                <p>
+                    பள்ளிகள் மற்றும் கல்வி தொடர்பான
+                    தகவல்கள் இங்கு சேர்க்கப்படும்.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🏥 மருத்துவம்</h3>
+                <p>
+                    அருகிலுள்ள அரசு மருத்துவ சேவைகள்
+                    மற்றும் அவசர உதவி தகவல்கள்.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🚰 குடிநீர்</h3>
+                <p>
+                    குடிநீர் மற்றும் நீர்வள
+                    தொடர்பான தகவல்கள்.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🛣️ சாலை வசதி</h3>
+                <p>
+                    கிராமத்தின் முக்கிய சாலைகள் மற்றும்
+                    போக்குவரத்து தொடர்பான தகவல்கள்.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="contact">
+            <h2>தொடர்பு</h2>
+
+            <p>
+                எப்போதும் வென்றான் கிராமம் தொடர்பான
+                தகவல்கள் அல்லது செய்திகளை பகிர விரும்பினால்
+                எங்களை தொடர்பு கொள்ளலாம்.
+            </p>
+
+            <br>
+
+            <p>
+                📱 WhatsApp: விரைவில்
+            </p>
+
+            <p>
+                📧 Email: விரைவில்
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 எப்போதும் வென்றான்</p>
+        <p>எங்கள் கிராமம் • எங்கள் பெருமை</p>
+    </footer>
+
+</body>
+</html>
