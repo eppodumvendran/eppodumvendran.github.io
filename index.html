@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>எப்போதும் வென்றான் | எங்கள் கிராமம்</title>
-    <link rel="stylesheet" href="style.css">
 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -51,13 +54,17 @@
             text-decoration: none;
             color: #0f766e;
             font-weight: bold;
-            margin: 0 10px;
+            margin: 0 12px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
         }
 
         section {
             max-width: 1000px;
             margin: auto;
-            padding: 45px 20px;
+            padding: 35px 20px;
         }
 
         section h2 {
@@ -69,7 +76,7 @@
 
         .welcome {
             background: white;
-            margin-top: 25px;
+            margin-top: 15px;
             border-radius: 15px;
             padding: 30px;
             box-shadow: 0 3px 15px rgba(0,0,0,0.08);
@@ -99,6 +106,28 @@
             background: #e6fffb;
             border-radius: 15px;
             text-align: center;
+            padding: 35px 20px;
+            border: 1px solid #b2f5ea;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+        }
+
+        .contact a {
+            color: #0f766e;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .emergency-card {
+            background: #fff;
+            border-left: 5px solid #0f766e;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
         }
 
         footer {
@@ -106,7 +135,7 @@
             color: white;
             text-align: center;
             padding: 25px 15px;
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         @media (max-width: 600px) {
@@ -126,7 +155,7 @@
 <body>
 
     <!-- Header -->
-    <header>
+    <header id="home">
         <h1>எப்போதும் வென்றான்</h1>
         <p>எங்கள் கிராமம் • எங்கள் பெருமை</p>
     </header>
@@ -136,21 +165,22 @@
         <a href="#home">முகப்பு</a>
         <a href="#about">கிராமம்</a>
         <a href="#facilities">வசதிகள்</a>
+        <a href="#emergency">அவசரம்</a>
         <a href="#contact">தொடர்பு</a>
     </nav>
 
     <!-- Home -->
-    <section id="home">
+    <section>
         <div class="welcome">
             <h2>எப்போதும் வென்றான் கிராமத்திற்கு வரவேற்கிறோம்!</h2>
 
-            <p>
+            <p style="margin-top: 10px;">
                 தூத்துக்குடி மாவட்டம், ஓட்டப்பிடாரம் வட்டாரத்தில் அமைந்துள்ள
                 எப்போதும் வென்றான் கிராமத்தின் தகவல்களை ஒரே இடத்தில்
                 அறிந்து கொள்ள உருவாக்கப்பட்ட இணையதளம்.
             </p>
 
-            <p>
+            <p style="margin-top: 10px;">
                 நமது கிராமத்தின் செய்திகள், முக்கிய இடங்கள்,
                 பொதுமக்கள் பயன்பாட்டு தகவல்கள் மற்றும்
                 வளர்ச்சி தொடர்பான தகவல்கள் இங்கு பகிரப்படும்.
@@ -227,7 +257,7 @@
             <div class="card">
                 <h3>🛣️ சாலை வசதி</h3>
                 <p>
-                    கிராமத்தின் முக்கிய சாலைகள் மற்றும்
+                    கிராமத்தின் முக்கிய सड़कें மற்றும்
                     போக்குவரத்து தொடர்பான தகவல்கள்.
                 </p>
             </div>
@@ -235,25 +265,47 @@
         </div>
     </section>
 
+    <!-- Emergency Contacts -->
+    <section id="emergency">
+        <h2>🚨 அவசர உதவி எண்கள்</h2>
+        <div class="emergency-card">
+            <p style="margin-bottom: 8px;">• <strong>காவல் நிலையம்:</strong> <a href="tel:100" style="color: #0f766e; font-weight: bold;">100</a></p>
+            <p style="margin-bottom: 8px;">• <strong>ஆம்புலன்ஸ்:</strong> <a href="tel:108" style="color: #0f766e; font-weight: bold;">108</a></p>
+            <p style="margin-bottom: 8px;">• <strong>மின்சாரப் புகார்:</strong> <a href="tel:1912" style="color: #0f766e; font-weight: bold;">1912</a></p>
+            <p>• <strong>முதலமைச்சரின் உதவி மையம் (புகார்கள்):</strong> <a href="https://cmhelpline.tn.gov.in" target="_blank" style="color: #0f766e; font-weight: bold;">cmhelpline.tn.gov.in</a></p>
+        </div>
+    </section>
+
     <!-- Contact -->
     <section id="contact">
         <div class="contact">
-            <h2>தொடர்பு</h2>
+            <h2>தொடர்பு கொள்ள</h2>
 
-            <p>
+            <p style="margin-bottom: 20px;">
                 எப்போதும் வென்றான் கிராமம் தொடர்பான
-                தகவல்கள் அல்லது செய்திகளை பகிர விரும்பினால்
+                தகவல்கள் அல்லது செய்திகளைப் பகிர விரும்பினால்
                 எங்களை தொடர்பு கொள்ளலாம்.
             </p>
 
-            <br>
-
-            <p>
-                📱 WhatsApp: விரைவில்
+            <p style="margin-bottom: 12px; font-size: 1.05rem;">
+                📱 <strong>WhatsApp:</strong> 
+                <a href="https://wa.me/918438489060" target="_blank">
+                    +91 84384 89060 (மெசேஜ் அனுப்ப)
+                </a>
             </p>
 
-            <p>
-                📧 Email: விரைவில்
+            <p style="margin-bottom: 12px; font-size: 1.05rem;">
+                📞 <strong>தொலைபேசி:</strong> 
+                <a href="tel:+918438489060">
+                    +91 84384 89060 (அழைக்க)
+                </a>
+            </p>
+
+            <p style="font-size: 1.05rem;">
+                📧 <strong>Email:</strong> 
+                <a href="mailto:Kannana2018@gmail.com">
+                    Kannana2018@gmail.com
+                </a>
             </p>
         </div>
     </section>
@@ -266,3 +318,4 @@
 
 </body>
 </html>
+
